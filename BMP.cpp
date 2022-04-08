@@ -310,16 +310,58 @@ namespace images
         m_height = height;
     }
     void BMP::errordelete() {
-
+        int k = 8;
         for (int i = 1; i < m_height-1; i++)
             for (int j = 1; j < m_width-1; j++)
             {
                 if (m_pixels[i][j].r == 0 and m_pixels[i][j].g == 0  and m_pixels[i][j].b == 0)
                 {
-                    m_pixels[i][j].r = (m_pixels[i + 1][j].r + m_pixels[i][j + 1].r + m_pixels[i - 1][j].r + m_pixels[i][j - 1].r + m_pixels[i + 1][j + 1].r + m_pixels[i - 1][j - 1].r+ m_pixels[i + 1][j - 1].r + m_pixels[i - 1][j + 1].r) / 8;
-                    m_pixels[i][j].b = (m_pixels[i + 1][j].b + m_pixels[i][j + 1].b + m_pixels[i - 1][j].b + m_pixels[i][j - 1].b + m_pixels[i + 1][j + 1].b + m_pixels[i - 1][j - 1].b+ m_pixels[i + 1][j - 1].b + m_pixels[i - 1][j + 1].b) / 8;
-                    m_pixels[i][j].g = (m_pixels[i + 1][j].g + m_pixels[i][j + 1].g + m_pixels[i - 1][j].g + m_pixels[i][j - 1].g + m_pixels[i + 1][j + 1].g + m_pixels[i - 1][j - 1].g+ m_pixels[i + 1][j - 1].g + m_pixels[i - 1][j + 1].g) / 8;
+                    k = 8;
 
+                    if ((m_pixels[i + 1][j].r + m_pixels[i + 1][j].b + m_pixels[i + 1][j].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+                    if ((m_pixels[i + 1][j+1].r + m_pixels[i + 1][j+1].b + m_pixels[i + 1][j+1].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+                    if ((m_pixels[i][j+1].r + m_pixels[i][j+1].b + m_pixels[i][j+1].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+                    if ((m_pixels[i - 1][j].r + m_pixels[i - 1][j].b + m_pixels[i - 1][j].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+                    if ((m_pixels[i - 1][j-1].r + m_pixels[i - 1][j-1].b + m_pixels[i - 1][j-1].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+                    if ((m_pixels[i][j-1].r + m_pixels[i][j-1].b + m_pixels[i][j-1].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+                    if ((m_pixels[i + 1][j-1].r + m_pixels[i + 1][j-1].b + m_pixels[i + 1][j-1].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+                    if ((m_pixels[i - 1][j+1].r + m_pixels[i - 1][j+1].b + m_pixels[i - 1][j+1].g) == 0)
+                    {
+                        k = k - 1;
+                    }
+
+
+
+
+
+
+                    if (k != 0) {
+
+                        m_pixels[i][j].r = (m_pixels[i + 1][j].r + m_pixels[i][j + 1].r + m_pixels[i - 1][j].r + m_pixels[i][j - 1].r + m_pixels[i + 1][j + 1].r + m_pixels[i - 1][j - 1].r + m_pixels[i + 1][j - 1].r + m_pixels[i - 1][j + 1].r) / 8;
+                        m_pixels[i][j].b = (m_pixels[i + 1][j].b + m_pixels[i][j + 1].b + m_pixels[i - 1][j].b + m_pixels[i][j - 1].b + m_pixels[i + 1][j + 1].b + m_pixels[i - 1][j - 1].b + m_pixels[i + 1][j - 1].b + m_pixels[i - 1][j + 1].b) / 8;
+                        m_pixels[i][j].g = (m_pixels[i + 1][j].g + m_pixels[i][j + 1].g + m_pixels[i - 1][j].g + m_pixels[i][j - 1].g + m_pixels[i + 1][j + 1].g + m_pixels[i - 1][j - 1].g + m_pixels[i + 1][j - 1].g + m_pixels[i - 1][j + 1].g) / 8;
+                    }
         }
             }
 
