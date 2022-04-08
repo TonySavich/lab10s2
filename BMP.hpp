@@ -1,6 +1,6 @@
 #include <string>
 #include <fstream>
-#include "matrix.hpp"
+#include <matrix.hpp>
 
 using math::Vec2d;
 using math::Mat22d;
