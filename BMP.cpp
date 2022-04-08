@@ -358,9 +358,9 @@ namespace images
 
                     if (k != 0) {
 
-                        m_pixels[i][j].r = (m_pixels[i + 1][j].r + m_pixels[i][j + 1].r + m_pixels[i - 1][j].r + m_pixels[i][j - 1].r + m_pixels[i + 1][j + 1].r + m_pixels[i - 1][j - 1].r + m_pixels[i + 1][j - 1].r + m_pixels[i - 1][j + 1].r) / 8;
-                        m_pixels[i][j].b = (m_pixels[i + 1][j].b + m_pixels[i][j + 1].b + m_pixels[i - 1][j].b + m_pixels[i][j - 1].b + m_pixels[i + 1][j + 1].b + m_pixels[i - 1][j - 1].b + m_pixels[i + 1][j - 1].b + m_pixels[i - 1][j + 1].b) / 8;
-                        m_pixels[i][j].g = (m_pixels[i + 1][j].g + m_pixels[i][j + 1].g + m_pixels[i - 1][j].g + m_pixels[i][j - 1].g + m_pixels[i + 1][j + 1].g + m_pixels[i - 1][j - 1].g + m_pixels[i + 1][j - 1].g + m_pixels[i - 1][j + 1].g) / 8;
+                        m_pixels[i][j].r = (m_pixels[i + 1][j].r + m_pixels[i][j + 1].r + m_pixels[i - 1][j].r + m_pixels[i][j - 1].r + m_pixels[i + 1][j + 1].r + m_pixels[i - 1][j - 1].r + m_pixels[i + 1][j - 1].r + m_pixels[i - 1][j + 1].r) / k;
+                        m_pixels[i][j].b = (m_pixels[i + 1][j].b + m_pixels[i][j + 1].b + m_pixels[i - 1][j].b + m_pixels[i][j - 1].b + m_pixels[i + 1][j + 1].b + m_pixels[i - 1][j - 1].b + m_pixels[i + 1][j - 1].b + m_pixels[i - 1][j + 1].b) / k;
+                        m_pixels[i][j].g = (m_pixels[i + 1][j].g + m_pixels[i][j + 1].g + m_pixels[i - 1][j].g + m_pixels[i][j - 1].g + m_pixels[i + 1][j + 1].g + m_pixels[i - 1][j - 1].g + m_pixels[i + 1][j - 1].g + m_pixels[i - 1][j + 1].g) / k;
                     }
         }
             }
