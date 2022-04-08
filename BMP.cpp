@@ -1,4 +1,4 @@
-#include "BMP.hpp"
+#include <BMP.hpp>
 
 namespace images
 {
