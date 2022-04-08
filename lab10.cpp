@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "BMP.hpp"
+#include <BMP.hpp>
 
 int main()
 {
