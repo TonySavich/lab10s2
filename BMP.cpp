@@ -356,7 +356,7 @@ namespace images
 
 
 
-                    if (k != 0) {
+                    if (k >3) {
 
                         m_pixels[i][j].r = (m_pixels[i + 1][j].r + m_pixels[i][j + 1].r + m_pixels[i - 1][j].r + m_pixels[i][j - 1].r + m_pixels[i + 1][j + 1].r + m_pixels[i - 1][j - 1].r + m_pixels[i + 1][j - 1].r + m_pixels[i - 1][j + 1].r) / k;
                         m_pixels[i][j].b = (m_pixels[i + 1][j].b + m_pixels[i][j + 1].b + m_pixels[i - 1][j].b + m_pixels[i][j - 1].b + m_pixels[i + 1][j + 1].b + m_pixels[i - 1][j - 1].b + m_pixels[i + 1][j - 1].b + m_pixels[i - 1][j + 1].b) / k;
